@@ -28,6 +28,8 @@
     <v-app-bar
       app
       white
+      height="70"
+      elevate-on-scroll
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Iris Classification</v-toolbar-title>
