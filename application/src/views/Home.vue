@@ -112,7 +112,7 @@ export default {
   methods: {
     predict () {
       this.predictLoading = true
-      axios.post('https://tensorflow512-ze252bno3q-ew.a.run.app/predict', {
+      axios.post('https://iris-classification-classifier-ze252bno3q-ew.a.run.app/predict', {
         sepal_length: this.sepalLength,
         sepal_width: this.sepalWidth,
         petal_length: this.petalLength,

@@ -1,5 +1,5 @@
 <template>
-  <v-app light>
+  <v-app>
 
     <v-navigation-drawer
       v-model="drawer"
@@ -27,7 +27,6 @@
 
     <v-app-bar
       app
-      white
       height="70"
       elevate-on-scroll
     >
@@ -39,10 +38,8 @@
       <router-view></router-view>
     </v-content>
 
-    <v-footer
-      color="white"
-    >
-      <span class="black-text">&copy; 2019</span>
+    <v-footer>
+      <span>&copy; 2019</span>
     </v-footer>
 
   </v-app>
@@ -54,7 +51,7 @@ export default {
     source: String
   },
   data: () => ({
-    drawer: false
+    drawer: null
   })
 }
 </script>
