@@ -4,7 +4,7 @@
       <v-row justify="center">
         <v-col md="6" class="pa-4">
 
-          <v-card class="mb-4 mt-2" elevation="4">
+          <v-card class="mb-4 mt-2" raised="true">
             <v-card-title>About</v-card-title>
             <v-card-text>
               This is a simple web application to classify irises as virginica, versicolor or setosa.
@@ -14,7 +14,7 @@
             </v-card-text>
           </v-card>
 
-          <v-card class="my-4" elevation="4">
+          <v-card class="my-4" raised="true">
             <v-card-title>Source Code</v-card-title>
             <v-card-text>
               You can view the source code of this project on Github.
@@ -23,7 +23,7 @@
             </v-card-text>
           </v-card>
 
-          <v-card class="my-4" elevation="4">
+          <v-card class="my-4" raised="true">
             <v-card-title>Developer</v-card-title>
             <v-card-text>
               This app is created by Mete Şengül. For more information you can visit my website.<br>
