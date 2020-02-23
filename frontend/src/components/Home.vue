@@ -111,7 +111,7 @@ export default {
    methods: {
     predict () {
       this.predictLoading = true
-      axios.post('http://127.0.0.1:5000/predict', {
+      axios.post('https://iris-classification-backend-ze252bno3q-ez.a.run.app/predict', {
         sepal_length: this.sepalLength,
         sepal_width: this.sepalWidth,
         petal_length: this.petalLength,
