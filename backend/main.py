@@ -1,20 +1,34 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_restful import Resource, Api, reqparse
-
 import tensorflow as tf
 import numpy as np
+
+
+class Model:
+
+    def __init__(self, directory):
+        self.classes = ["Setosa", "Versicolor", "Virginica"]
+
+        self.session = tf.compat.v1.Session()
+        self.graph = tf.compat.v1.get_default_graph()
+
+        with self.graph.as_default():
+            with self.session.as_default():
+                self.model = tf.keras.models.load_model(directory)
+                
+    def predict(self, x):
+        with self.graph.as_default():
+            with self.session.as_default():
+                y = self.model.predict(x.astype(np.float).reshape(1, 4))[0]
+        return str(self.classes[int(np.argmax(y))])
 
 
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
 
-sess = tf.Session()
-graph = tf.get_default_graph()
-tf.keras.backend.set_session(sess)
-
-model = tf.keras.models.load_model("model.h5")
+model = Model("./model.h5")
 
 parser = reqparse.RequestParser()
 parser.add_argument("sepal_length")
@@ -27,26 +41,20 @@ class Predict(Resource):
 
     @staticmethod
     def post():
-        global sess
-        global graph
-        global model
+      global model, parser
 
-        iris = ["Setosa", "Versicolor", "Virginica"]
+      args = parser.parse_args()
+      x = np.array(
+        [
+          args["sepal_length"],
+          args["sepal_width"],
+          args["petal_length"],
+          args["petal_width"]
+        ]
+      )
 
-        args = parser.parse_args()
-        x = np.array(
-            [
-              args["sepal_length"],
-              args["sepal_width"],
-              args["petal_length"],
-              args["petal_width"]
-            ]
-          ).astype(np.float).reshape(1, 4)
-
-        with graph.as_default():
-            tf.keras.backend.set_session(sess)
-            y = model.predict(x)[0]
-            return {'class': str(iris[int(np.argmax(y))])}
+      result = model.predict(x)
+      return {'class': result}
 
 
 api.add_resource(Predict, "/predict")
