@@ -19,7 +19,7 @@
         class="text-center"
         cols="12"
       >
-        <v-btn href="https://github.com/metesengul/iris-classification" class="grey--text" text small><v-icon left dark small>mdi-github-circle</v-icon>Source Code</v-btn>
+        <v-btn href="https://github.com/metesengul/iris-classification" class="grey--text" text small><v-icon left dark small>mdi-github</v-icon>Source Code</v-btn>
       </v-col>
     </v-footer>
 
