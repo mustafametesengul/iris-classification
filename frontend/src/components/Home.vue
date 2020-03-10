@@ -6,7 +6,7 @@
 
         <v-slider
           color="purple"
-          class="mt-12"
+          class="mt-10"
           v-model="sepalLength"
           label="Sepal Length (cm)"
           thumb-label="always"
@@ -17,7 +17,7 @@
 
         <v-slider
           color="green"
-          class="mt-12"
+          class="mt-10"
           v-model="sepalWidth"
           label="Sepal Width (cm)"
           thumb-label="always"
@@ -28,7 +28,7 @@
 
         <v-slider
           color="blue"
-          class="mt-12"
+          class="mt-10"
           v-model="petalLength"
           label="Petal Length (cm)"
           thumb-label="always"
@@ -39,7 +39,7 @@
 
         <v-slider
           color="orange"
-          class="mt-12"
+          class="mt-10"
           v-model="petalWidth"
           label="Petal Width (cm)"
           thumb-label="always"
@@ -52,7 +52,7 @@
     </v-row>
 
     <v-row justify="center" >
-      <v-btn :loading="predictLoading" @click="predict" >Predict Species</v-btn>
+      <v-btn :loading="predictLoading" @click="predict" class="mb-10 mt-2">Predict Species</v-btn>
     </v-row>
 
     <v-overlay :value="overlay">
