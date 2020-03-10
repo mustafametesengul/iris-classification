@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "metesengul-iris-classification",
+    "site": "iris-classification",
     "public": "dist",
     "ignore": [
       "firebase.json",
