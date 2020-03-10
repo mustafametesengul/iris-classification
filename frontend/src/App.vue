@@ -6,7 +6,7 @@
       height=50
       color="grey darken-4"
     >
-      <img class="mr-3" :src="require('@/assets/flower.png')" height="32"/>
+      <img class="mr-3" :src="require('@/assets/flower.png')" height="30"/>
       <v-toolbar-title>Iris Classification</v-toolbar-title>
     </v-app-bar>
 

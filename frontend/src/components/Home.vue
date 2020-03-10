@@ -5,7 +5,7 @@
       <v-col cols="10" md="6">
 
         <v-slider
-          color="blue"
+          color="purple"
           class="mt-12"
           v-model="sepalLength"
           label="Sepal Length (cm)"
@@ -16,7 +16,7 @@
         ></v-slider>
 
         <v-slider
-          color="purple"
+          color="green"
           class="mt-12"
           v-model="sepalWidth"
           label="Sepal Width (cm)"
@@ -27,7 +27,7 @@
         ></v-slider>
 
         <v-slider
-          color="orange"
+          color="blue"
           class="mt-12"
           v-model="petalLength"
           label="Petal Length (cm)"
@@ -38,7 +38,7 @@
         ></v-slider>
 
         <v-slider
-          color="green"
+          color="orange"
           class="mt-12"
           v-model="petalWidth"
           label="Petal Width (cm)"
