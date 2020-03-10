@@ -52,7 +52,7 @@
     </v-row>
 
     <v-row justify="center" >
-      <v-btn :loading="predictLoading" @click="predict" >Predict</v-btn>
+      <v-btn :loading="predictLoading" @click="predict" >Predict Species</v-btn>
     </v-row>
 
     <v-overlay :value="overlay">
